@@ -1,0 +1,99 @@
+.mainDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 150px;
+}
+
+.header {
+  color: #146574;
+  text-align: center;
+  font-feature-settings: "clig" off, "liga" off;
+  /* Headings/H2 */
+  font-family: DM Sans;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 46px;
+  /* 127.778% */
+}
+
+.tab {
+  text-align: center;
+  font-feature-settings: "clig" off, "liga" off;
+  font-family: DM Sans;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px;
+  /* 100% */
+}
+
+.text {
+  color: #9b8e83;
+  font-feature-settings: "clig" off, "liga" off;
+  text-align: center;
+  margin-top: 3rem;
+  /* Body/Default */
+  font-family: DM Sans;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 30px;
+  /* 166.667% */
+  width: 613.671px;
+}
+
+.projects {
+  display: flex;
+  align-items: center;
+  margin-top: 3rem;
+}
+
+.projectContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  width: 263px;
+  height: 365px;
+  flex-shrink: 0;
+  border-radius: 20px;
+  background: var(--neutral-colors-color-300, #f9f9ff);
+}
+
+.projectName {
+  color: #4e514e;
+  text-align: center;
+  font-feature-settings: "clig" off, "liga" off;
+
+  /* Text single/300/Bold */
+  font-family: DM Sans;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px;
+  /* 100% */
+}
+
+.projectProgress {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.projectProgressText {
+  width: 54px;
+  height: 28px;
+
+  color: #146574;
+  text-align: center;
+  font-feature-settings: "clig" off, "liga" off;
+  font-family: DM Sans;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px;
+  /* 111.111% */
+  margin-left: 12px;
+}

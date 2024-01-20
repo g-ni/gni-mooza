@@ -1,0 +1,67 @@
+.mainDiv {
+  flex-shrink: 0;
+  border: 1px solid #9a9a9d;
+  border-radius: 14px;
+  background: #9a9a9d;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 22.15px;
+  margin-bottom: 50px;
+  margin-right: 22.15px;
+}
+
+.resultContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.result {
+  color: #000;
+  text-align: center;
+  font-feature-settings: "clig" off, "liga" off;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px;
+  /* 100% */
+}
+
+.iconsContainer {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10%;
+}
+
+.icon {
+  width: 60px;
+  height: 60px;
+}
+
+/* .middleIcon {
+  margin-left: 19px;
+  margin-right: 19px;
+} */
+
+@media screen and (max-width: 1500px) {
+  .mainDiv {
+    margin-bottom: 22.15px;
+  }
+  .resultImage {
+    width: 400px;
+    height: 400px;
+  }
+}
+
+@media screen and (min-width: 1500px) {
+  .mainDiv {
+    margin-bottom: 50px;
+  }
+  .resultImage {
+    width: 600px;
+    height: 600px;
+  }
+}

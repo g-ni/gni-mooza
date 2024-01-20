@@ -1,0 +1,5 @@
+.backArrow {
+  width: 20px;
+  height: 30px;
+  flex-shrink: 0;
+}

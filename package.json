@@ -1,0 +1,43 @@
+{
+  "name": "gnminapp",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@auth0/nextjs-auth0": "^2.7.0",
+    "@aws-sdk/client-dynamodb": "^3.405.0",
+    "@aws-sdk/client-s3": "^3.481.0",
+    "@aws-sdk/credential-provider-ini": "^3.481.0",
+    "@aws-sdk/lib-dynamodb": "^3.405.0",
+    "@aws-sdk/s3-request-presigner": "^3.481.0",
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.14.3",
+    "@mui/lab": "^5.0.0-alpha.160",
+    "@mui/material": "^5.15.4",
+    "@reduxjs/toolkit": "^1.9.5",
+    "autoprefixer": "10.4.14",
+    "aws-crt": "^1.18.0",
+    "aws-sdk": "^2.1445.0",
+    "axios": "^1.4.0",
+    "bcrypt": "^5.1.0",
+    "eslint": "8.45.0",
+    "eslint-config-next": "13.4.12",
+    "next": "13.4.12",
+    "next-auth": "^4.22.3",
+    "postcss": "8.4.27",
+    "react": "18.2.0",
+    "react-custom-scrollbars-2": "^4.5.0",
+    "react-dom": "18.2.0",
+    "react-redux": "^8.1.1",
+    "react-scrollbars-custom": "^4.1.1",
+    "swiper": "^11.0.4",
+    "tailwindcss": "3.3.3",
+    "uuid": "^9.0.1"
+  }
+}
