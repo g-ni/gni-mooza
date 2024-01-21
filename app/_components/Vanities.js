@@ -16,7 +16,7 @@ import { getUser } from "@/app/_utils/store/users";
 import { newProject } from "@/app/_utils/store/projects";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
-import { imagesActions } from "@/app/_utils/store/images";
+import { getImagesByDetails } from "@/app/_utils/store/images";
 
 const Vanities = () => {
   const dispatch = useDispatch();
@@ -24,6 +24,7 @@ const Vanities = () => {
   const router = useRouter();
   const swiperContainerRef = useRef(null);
   const user = useSelector((state) => state.users.user);
+  const images = useSelector((state) => state.images.images);
 
   const [preSignedImages, setPresignedImages] = useState([]);
 
@@ -33,9 +34,10 @@ const Vanities = () => {
       furnitureType: "vanity",
     };
     //getImages returns the urls of the existing images of templates
-    const images = await getImages(templateDetails);
+    dispatch(getImagesByDetails(templateDetails));
+
     console.log(images);
-    dispatch(imagesActions.setImages(images));
+
     let presinedArr = [];
     //looping through the images array and turning them to presigned urls
     for (let i = 0; i < images.length; i++) {
@@ -64,7 +66,7 @@ const Vanities = () => {
 
   useEffect(() => {
     getTemplatesHandler();
-  }, []);
+  }, [dispatch]);
 
   useEffect(() => {
     if (data) {

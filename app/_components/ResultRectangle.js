@@ -5,8 +5,9 @@ import shareIcon from "../../public/shareIcon.svg";
 import styles from "../_styles/resultRectangle.module.css";
 import { Roboto } from "next/font/google";
 import { useState, useEffect } from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { getPresignedUrl } from "../_utils/requests/images";
+import { getImagesByDetails } from "../_utils/store/images";
 
 const roboto = Roboto({
   style: "normal",
@@ -14,8 +15,9 @@ const roboto = Roboto({
   weight: ["400"],
 });
 const ResultRectangle = (props) => {
+  const dispatch = useDispatch();
   const images = useSelector((state) => state.images.images);
-  console.log(images);
+  // console.log(images);
   const myBucket = process.env.NEXT_PUBLIC_AWS_BUCKET_NAME;
   const myObjKeyPrefix = process.env.NEXT_PUBLIC_AWS_OBJECT_KEY_PREFIX;
   const templatesBucket = process.env.NEXT_PUBLIC_AWS_TEMPLATES_BUCKET;
@@ -25,54 +27,47 @@ const ResultRectangle = (props) => {
 
   const iconsArr = [undoIcon, redoIcon, saveIcon, shareIcon];
 
-  useEffect(() => {
-    const fetchPresignedUrl = async () => {
-      if (project?.ImageList) {
-        if (project.ImageList.length !== 0 || project.TemplateId !== 1) {
-          if (project?.ChatId) {
-            try {
-              const fullObjKey = myObjKeyPrefix + project.ChatId;
-              let imageDetails;
-              if (project.TemplateId !== 1) {
-                const filteredImage = images.filter((obj) =>
-                  obj.Key.includes(project.TemplateId)
-                );
-                const { Key: imageKey } = filteredImage[0];
-                console.log(imageKey);
-                imageDetails = {
-                  bucket: templatesBucket,
-                  key: imageKey,
-                  imageType: "template",
-                };
-              } else {
-                imageDetails = { bucket: myBucket, key: fullObjKey };
-              }
-              console.log(imageDetails);
-              const presignedUrlImage = await getPresignedUrl(imageDetails);
-              if (presignedUrlImage) {
-                // console.log("OLD IMAGE!!!");
-                // console.log(
-                //   project.ImageList[project.ImageList.length - 1].value[0]
-                // );
-                console.log("NEW IMAGE!!!");
-                console.log(presignedUrlImage);
-                //setCurrentImage(project.ImageList[project.ImageList.length - 1].value);
-                setCurrentImage(presignedUrlImage);
-              } else {
-                setCurrentImage(null);
-              }
-            } catch (error) {
-              console.error("Error fetching presigned URL:", error);
-              setCurrentImage(null);
-            }
-          }
-        } else {
-          setCurrentImage(null);
+  const fetchPresignedUrl = async () => {
+    if (project?.ChatId) {
+      const fullObjKey = myObjKeyPrefix + project.ChatId;
+      let imageDetails;
+      console.log(project.TemplateId);
+      if (project.TemplateId === 1) {
+        imageDetails = { bucket: myBucket, key: fullObjKey };
+        console.log("got into if ");
+      } else {
+        console.log("got into else");
+
+        if (images.length !== 0) {
+          const filteredImage = images.filter((obj) =>
+            obj.Key.includes(project.TemplateId)
+          );
+          const { Key: imageKey } = filteredImage[0];
+          console.log(imageKey);
+          imageDetails = {
+            bucket: templatesBucket,
+            key: imageKey,
+            imageType: "template",
+          };
+          console.log(imageDetails);
         }
       }
+      console.log(imageDetails);
+      const presignedUrlImage = await getPresignedUrl(imageDetails);
+      if (presignedUrlImage) {
+        setCurrentImage(presignedUrlImage);
+      }
+    }
+  };
+
+  useEffect(() => {
+    const templateDetails = {
+      company: "mooza",
+      furnitureType: "vanity",
     };
+    dispatch(getImagesByDetails(templateDetails));
     fetchPresignedUrl();
-  }, [project.ImageList]);
+  }, [dispatch, project]);
 
   return (
     <div className={styles.mainDiv}>
