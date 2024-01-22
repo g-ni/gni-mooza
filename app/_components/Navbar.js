@@ -85,7 +85,10 @@ const Navbar = (props) => {
           background: "#fff",
         }}
       >
-        <Toolbar sx={{ justifyContent: "space-between" }}>
+        <Toolbar
+          className={styles.navbar}
+          sx={{ justifyContent: "space-between" }}
+        >
           <div style={{ display: "flex", alignItems: "center" }}>
             <IconButton>
               <Image src={MoozaLogo} />
@@ -99,7 +102,20 @@ const Navbar = (props) => {
             <IconButton edge="end">
               <Image src={CartIcon} />
             </IconButton>
-            <IconButton edge="end">
+            <IconButton onClick={handleClick} id="lock-button">
+              <CustomAvatar
+                className={styles.avatar}
+                alt="profile_pic"
+                src={props.image}
+                style={{
+                  marginLeft: 32,
+                  marginRight: 27,
+                  width: 35,
+                  height: 35,
+                }}
+              />
+            </IconButton>
+            <IconButton style={{ marginRight: 40 }} edge="end">
               <Image src={MenuIcon} />
             </IconButton>
           </div>
