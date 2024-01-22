@@ -7,6 +7,7 @@ import Navbar from "./_components/Navbar";
 import Categories from "./_components/Categories";
 import { postRegister } from "./_utils/requests/auth";
 import { useEffect } from "react";
+import Advertising from "./_components/Advertising";
 
 const Welcome = () => {
   const { data } = useSession();
@@ -23,8 +24,7 @@ const Welcome = () => {
   return (
     <div>
       <Navbar image={data ? data.user.image : null} />
-      <Categories />
-      <Projects />
+      <Advertising />
     </div>
   );
 };
