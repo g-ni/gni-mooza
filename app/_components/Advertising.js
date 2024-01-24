@@ -38,7 +38,7 @@ const StartButton = styled(Button)(({ theme }) => ({
 
 const Advertising = () => {
   return (
-    <Box style={{ marginTop: 64 }}>
+    <Box style={{ marginTop: 64, marginBottom: 51 }}>
       <Box display="flex" justifyContent="space-between">
         <Box>
           <AdvTypography

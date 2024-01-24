@@ -8,6 +8,7 @@ import Categories from "./_components/Categories";
 import { postRegister } from "./_utils/requests/auth";
 import { useEffect } from "react";
 import Advertising from "./_components/Advertising";
+import Templates from "./_components/Templates";
 
 const Welcome = () => {
   const { data } = useSession();
@@ -25,6 +26,7 @@ const Welcome = () => {
     <div>
       <Navbar image={data ? data.user.image : null} />
       <Advertising />
+      <Templates />
     </div>
   );
 };
