@@ -7,7 +7,7 @@ import { useState } from "react";
 const montserrat = Montserrat({
   style: "normal",
   subsets: ["latin"],
-  weight: ["400", "700"],
+  weight: ["400", "700", "500"],
 });
 
 const TamplatesTabList = styled(TabList)(({ theme }) => ({
@@ -83,6 +83,14 @@ const Heading = styled(Typography)(({ theme }) => ({
   lineHeight: "43.608px",
 }));
 
+const SmallHeading = styled(Typography)(({ theme }) => ({
+  color: "#93A5AE",
+  fontFeatureSettings: "'clig' off, 'liga' off",
+  fontFamily: montserrat.style.fontFamily,
+  fontSize: 30,
+  fontWeight: 500,
+}));
+
 const Templates = () => {
   const [value, setValue] = useState("1");
 
@@ -112,29 +120,10 @@ const Templates = () => {
           <TabPanel value="2">Item Two</TabPanel>
           <TabPanel value="3">Item Three</TabPanel> */}
         </TabContext>
-        {/* <TabButton
-          variant="contained"
-          disabled={activeButton !== "button1"}
-          onClick={() => setActiveButton("button1")}
-        >
-          Vanities
-        </TabButton>
-        <TabButton
-          style={{ margin: "0 32.23px" }}
-          variant="contained"
-          disabled={activeButton !== "button2"}
-          onClick={() => setActiveButton("button2")}
-        >
-          Lorem
-        </TabButton>
-        <TabButton
-          variant="contained"
-          disabled={activeButton !== "button3"}
-          onClick={() => setActiveButton("button3")}
-        >
-          Ipsum
-        </TabButton> */}
       </Box>
+      <SmallHeading style={{ margin: "55px 171px 55px" }}>
+        Pick a template to start your design
+      </SmallHeading>
     </Box>
   );
 };
