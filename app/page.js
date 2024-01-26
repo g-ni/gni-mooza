@@ -9,6 +9,7 @@ import { postRegister } from "./_utils/requests/auth";
 import { useEffect } from "react";
 import Advertising from "./_components/Advertising";
 import Templates from "./_components/Templates";
+import Vanities from "./_components/Vanities";
 
 const Welcome = () => {
   const { data } = useSession();

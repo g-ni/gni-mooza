@@ -3,6 +3,8 @@ import { TabContext, TabList, TabPanel } from "@mui/lab";
 import { styled } from "@mui/material/styles";
 import { Montserrat } from "next/font/google";
 import { useState } from "react";
+import Vanities from "./Vanities";
+import Link from "next/link";
 
 const montserrat = Montserrat({
   style: "normal",
@@ -99,8 +101,14 @@ const Templates = () => {
   };
   return (
     <Box style={{ marginTop: 25 }}>
-      <Heading>Start Your Design</Heading>
-      <Box display="flex" justifyContent="center" style={{ marginTop: 52 }}>
+      <Heading id="tabs">Start Your Design</Heading>
+      <Box
+        display="flex"
+        flexDirection="column"
+        alignItems="center"
+        justifyContent="center"
+        style={{ marginTop: 52 }}
+      >
         <TabContext value={value}>
           <TamplatesTabList
             onChange={handleChange}
@@ -116,14 +124,11 @@ const Templates = () => {
             <CustomTab label="Ipsum" value="3" />
           </TamplatesTabList>
 
-          {/* <TabPanel value="1">Item One</TabPanel>
+          <TabPanel value="1">{value === "1" && <Vanities />}</TabPanel>
           <TabPanel value="2">Item Two</TabPanel>
-          <TabPanel value="3">Item Three</TabPanel> */}
+          <TabPanel value="3">Item Three</TabPanel>
         </TabContext>
       </Box>
-      <SmallHeading style={{ margin: "55px 171px 55px" }}>
-        Pick a template to start your design
-      </SmallHeading>
     </Box>
   );
 };

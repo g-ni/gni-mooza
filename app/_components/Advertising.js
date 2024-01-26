@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Montserrat } from "next/font/google";
 import { styled } from "@mui/material/styles";
 import styles from "@/app/_styles/advertising.module.css";
+import Link from "next/link";
 
 const montserrat = Montserrat({
   style: "normal",
@@ -49,12 +50,14 @@ const Advertising = () => {
             <br />
             <span style={{ color: "#000" }}>Lorem Ipsum</span>
           </AdvTypography>
-          <StartButton
-            style={{ marginTop: 137, marginLeft: "154.74px" }}
-            variant="contained"
-          >
-            Start Your Design
-          </StartButton>
+          <Link href="#tabs">
+            <StartButton
+              style={{ marginTop: 137, marginLeft: "154.74px" }}
+              variant="contained"
+            >
+              Start Your Design
+            </StartButton>
+          </Link>
         </Box>
         <Box>
           <Image className={styles.advImg} src={AdvertisingPic} />
