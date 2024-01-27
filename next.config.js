@@ -9,6 +9,12 @@ const nextConfig = {
         port: "",
         pathname: "/mooza/vanity/**", // Match the path prefix for your S3 files
       },
+      {
+        protocol: "https",
+        hostname: "geometry-results.s3.us-east-1.amazonaws.com", // Match the S3 bucket hostname
+        port: "",
+        pathname: "/results1/**", // Match the path prefix for your S3 files
+      },
     ],
   },
 };

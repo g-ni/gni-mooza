@@ -10,6 +10,8 @@ import { useEffect } from "react";
 import Advertising from "./_components/Advertising";
 import Templates from "./_components/Templates";
 import Vanities from "./_components/Vanities";
+import TemplateBox from "./_components/TemplateBox";
+import RecentProjects from "./_components/RecentProjects";
 
 const Welcome = () => {
   const { data } = useSession();
@@ -24,11 +26,12 @@ const Welcome = () => {
   // }, []);
 
   return (
-    <div>
+    <>
       <Navbar image={data ? data.user.image : null} />
       <Advertising />
       <Templates />
-    </div>
+      <RecentProjects />
+    </>
   );
 };
 

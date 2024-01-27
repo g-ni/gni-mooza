@@ -34,7 +34,6 @@ const CustomTypography = styled(Typography)(({ theme }) => ({
   fontSize: 20,
   fontWeight: 400,
   fontStyle: "normal",
-  lineHeight: 18,
   fontFamily: "Century Gothic",
 }));
 

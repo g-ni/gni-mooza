@@ -16,6 +16,7 @@ import { Montserrat } from "next/font/google";
 import Image from "next/image";
 import { styled } from "@mui/material/styles";
 import { TailSpin } from "react-loader-spinner";
+import TemplateBox from "./TemplateBox";
 
 const montserrat = Montserrat({
   style: "normal",
@@ -150,7 +151,58 @@ const Vanities = () => {
           {preSignedImages.map((template, index) => {
             return (
               <Grid item key={index}>
-                <Box
+                <TemplateBox
+                  bgBox="#F1E6E2"
+                  onClick={() => onClickTemplate(template)}
+                  image={
+                    <Image
+                      src={template.imageUrl}
+                      alt={`Image ${index + 1}`}
+                      fill
+                    />
+                  }
+                  text={
+                    <>
+                      <Typography
+                        style={{
+                          color: "#F0916B",
+                          fontFeatureSettings: "'clig' off, 'liga' off",
+                          fontFamily: montserrat.style.fontFamily,
+                          fontSize: "24.648px",
+                          fontWeight: 700,
+                        }}
+                      >
+                        {template.templateId}
+                      </Typography>
+                      <Typography
+                        style={{
+                          color: "#808E96",
+                          fontFeatureSettings: "'clig' off, 'liga' off",
+                          fontFamily: montserrat.style.fontFamily,
+                          fontSize: "22.752px",
+                          fontWeight: 700,
+                        }}
+                      >
+                        {" "}
+                        Measures: H”, W”
+                      </Typography>
+                      <Typography
+                        style={{
+                          color: "#808E96",
+                          fontFeatureSettings: "'clig' off, 'liga' off",
+                          fontFamily: montserrat.style.fontFamily,
+                          fontSize: "22.752px",
+                          fontWeight: 700,
+                        }}
+                      >
+                        {" "}
+                        Starting from: {template.initialInfo.initial_price}{" "}
+                        {template.initialInfo.currency}
+                      </Typography>
+                    </>
+                  }
+                />
+                {/* <Box
                   height={346}
                   width={314}
                   style={{ borderRadius: "13.272px", background: "#F1E6E2" }}
@@ -210,7 +262,7 @@ const Vanities = () => {
                       {template.initialInfo.currency}
                     </Typography>
                   </Box>
-                </Box>
+                </Box> */}
               </Grid>
             );
           })}
