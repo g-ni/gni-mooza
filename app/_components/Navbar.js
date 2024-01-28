@@ -10,13 +10,16 @@ import {
   MenuItem,
   ListItemText,
 } from "@mui/material";
-import MenuIcon from "@mui/icons-material/Menu";
+import MenuIcon from "@/public/menuIcon.svg";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { DM_Sans } from "next/font/google";
 import styles from "../_styles/navbar.module.css";
 import { styled } from "@mui/material/styles";
 import { signIn, signOut, useSession } from "next-auth/react";
 import { useState } from "react";
+import MoozaLogo from "@/public/MoozaLogo.png";
+import Image from "next/image";
+import CartIcon from "@/public/CartIcon.svg";
 
 const dmFont = DM_Sans({
   style: ["normal"],
@@ -25,14 +28,13 @@ const dmFont = DM_Sans({
 });
 
 const CustomTypography = styled(Typography)(({ theme }) => ({
-  color: "#146574",
+  color: "#93A5AE",
   textAlign: "center",
   fontFeatureSettings: "'clig' off, 'liga' off",
-  fontSize: 18,
+  fontSize: 20,
   fontWeight: 400,
   fontStyle: "normal",
-  lineHeight: 18,
-  fontFamily: dmFont.style.fontFamily,
+  fontFamily: "Century Gothic",
 }));
 
 const CustomButton = styled(Button)(({ theme }) => ({
@@ -77,13 +79,46 @@ const Navbar = (props) => {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar
         style={{
-          height: 110,
+          height: 64,
           flexShrink: 0,
           background: "#fff",
         }}
       >
-        <Toolbar>
-          <IconButton
+        <Toolbar
+          className={styles.navbar}
+          sx={{ justifyContent: "space-between" }}
+        >
+          <div style={{ display: "flex", alignItems: "center" }}>
+            <IconButton>
+              <Image src={MoozaLogo} />
+            </IconButton>
+            <CustomTypography sx={{ marginTop: "1rem" }} component="div">
+              Powered By <span style={{ fontWeight: "700" }}>GNi</span>
+            </CustomTypography>
+          </div>
+
+          <div style={{ display: "flex" }}>
+            <IconButton /*edge="end"*/>
+              <Image src={CartIcon} />
+            </IconButton>
+            <IconButton onClick={handleClick} id="lock-button">
+              <CustomAvatar
+                className={styles.avatar}
+                alt="profile_pic"
+                src={props.image}
+                style={{
+                  marginLeft: 27,
+                  marginRight: 27,
+                  width: 35,
+                  height: 35,
+                }}
+              />
+            </IconButton>
+            <IconButton style={{ marginRight: 20 }} /*edge="end"*/>
+              <Image src={MenuIcon} />
+            </IconButton>
+          </div>
+          {/* <IconButton
             className={styles.menu}
             size="large"
             edge="start"
@@ -125,7 +160,7 @@ const Navbar = (props) => {
                 flexShrink: 0,
               }}
             />
-          </IconButton>
+          </IconButton> */}
           <Menu
             id="lock-menu"
             anchorEl={anchorEl}

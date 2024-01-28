@@ -1,7 +1,10 @@
 .navbar {
-  height: 110px;
-  flex-shrink: 0;
-  background: var(--neutral-colors-white, #fff);
+  border-bottom: 1.2px solid #a6a3a3;
+  background: #fff;
+}
+
+.gni {
+  margin-top: 1rem;
 }
 
 .menu {

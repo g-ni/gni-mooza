@@ -11,9 +11,7 @@ import {
 } from "@mui/material";
 import { Roboto, Alata, Montserrat } from "next/font/google";
 import { styled } from "@mui/material/styles";
-import backArrowIcon from "../../public/backArrowIcon.svg";
 import styles from "../_styles/chatNavbar.module.css";
-import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { signOut } from "next-auth/react";
 import gniLogo from "../../public/gniLogo.svg";
