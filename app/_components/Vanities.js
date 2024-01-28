@@ -202,67 +202,6 @@ const Vanities = () => {
                     </>
                   }
                 />
-                {/* <Box
-                  height={346}
-                  width={314}
-                  style={{ borderRadius: "13.272px", background: "#F1E6E2" }}
-                >
-                  <Box
-                    position="relative"
-                    height={221}
-                    width={304}
-                    bgcolor="#FFF"
-                    borderRadius="13.272px"
-                    top="4.74px"
-                    marginLeft="4.74px"
-                    style={{ cursor: "pointer" }}
-                    onClick={() => onClickTemplate(template)}
-                  >
-                    <Image
-                      src={template.imageUrl}
-                      alt={`Image ${index + 1}`}
-                      fill
-                    />
-                  </Box>
-                  <Box marginTop="9.48px" marginLeft="13.27px">
-                    <Typography
-                      style={{
-                        color: "#F0916B",
-                        fontFeatureSettings: "'clig' off, 'liga' off",
-                        fontFamily: montserrat.style.fontFamily,
-                        fontSize: "24.648px",
-                        fontWeight: 700,
-                      }}
-                    >
-                      {template.templateId}
-                    </Typography>
-                    <Typography
-                      style={{
-                        color: "#808E96",
-                        fontFeatureSettings: "'clig' off, 'liga' off",
-                        fontFamily: montserrat.style.fontFamily,
-                        fontSize: "22.752px",
-                        fontWeight: 700,
-                      }}
-                    >
-                      {" "}
-                      Measures: H”, W”
-                    </Typography>
-                    <Typography
-                      style={{
-                        color: "#808E96",
-                        fontFeatureSettings: "'clig' off, 'liga' off",
-                        fontFamily: montserrat.style.fontFamily,
-                        fontSize: "22.752px",
-                        fontWeight: 700,
-                      }}
-                    >
-                      {" "}
-                      Starting from: {template.initialInfo.initial_price}{" "}
-                      {template.initialInfo.currency}
-                    </Typography>
-                  </Box>
-                </Box> */}
               </Grid>
             );
           })}

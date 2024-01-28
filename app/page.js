@@ -1,29 +1,13 @@
 "use client";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
-import { signOut, useSession } from "next-auth/react";
-import Projects from "./_components/Projects";
+
 import Navbar from "./_components/Navbar";
-import Categories from "./_components/Categories";
-import { postRegister } from "./_utils/requests/auth";
-import { useEffect } from "react";
 import Advertising from "./_components/Advertising";
 import Templates from "./_components/Templates";
-import Vanities from "./_components/Vanities";
-import TemplateBox from "./_components/TemplateBox";
 import RecentProjects from "./_components/RecentProjects";
+import { useSession } from "next-auth/react";
 
 const Welcome = () => {
   const { data } = useSession();
-  // useEffect(() => {
-  //   if (data && data !== undefined) {
-  //     const obj = {
-  //       email: data.user.email,
-  //       password: "123456",
-  //     };
-  //     postRegister(obj);
-  //   }
-  // }, []);
 
   return (
     <>

@@ -1,10 +1,9 @@
-import { Box, Typography, Button, Tabs, Tab } from "@mui/material";
+import { Box, Typography, Tab } from "@mui/material";
 import { TabContext, TabList, TabPanel } from "@mui/lab";
 import { styled } from "@mui/material/styles";
 import { Montserrat } from "next/font/google";
 import { useState } from "react";
 import Vanities from "./Vanities";
-import Link from "next/link";
 
 const montserrat = Montserrat({
   style: "normal",
@@ -23,32 +22,6 @@ const TamplatesTabList = styled(TabList)(({ theme }) => ({
     fontWeight: 700,
     textAlign: "center",
     fontFeatureSettings: "'clig' off, 'liga' off",
-  },
-  // "&.Mui-disabled": {
-  //   background: "rgba(243, 223, 217, 0.10)",
-  //   color: "#ECCDC3",
-  //   fontWeight: 600,
-  //   lineHeight: "43.608px",
-  // },
-}));
-
-const TabButton = styled(Button)(({ theme }) => ({
-  "&.MuiButton-contained": {
-    background: "rgba(243, 223, 217, 0.50)",
-    color: "#F0916B",
-    borderRadius: "13.272px",
-    textTransform: "none",
-    fontFamily: montserrat.style.fontFamily,
-    fontSize: "28.44px",
-    fontWeight: 700,
-    textAlign: "center",
-    fontFeatureSettings: "'clig' off, 'liga' off",
-  },
-  "&.Mui-disabled": {
-    background: "rgba(243, 223, 217, 0.10)",
-    color: "#ECCDC3",
-    fontWeight: 600,
-    lineHeight: "43.608px",
   },
 }));
 
@@ -83,14 +56,6 @@ const Heading = styled(Typography)(({ theme }) => ({
   fontSize: "34.128px",
   fontWeight: 700,
   lineHeight: "43.608px",
-}));
-
-const SmallHeading = styled(Typography)(({ theme }) => ({
-  color: "#93A5AE",
-  fontFeatureSettings: "'clig' off, 'liga' off",
-  fontFamily: montserrat.style.fontFamily,
-  fontSize: 30,
-  fontWeight: 500,
 }));
 
 const Templates = () => {
