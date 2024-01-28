@@ -98,7 +98,7 @@ const Navbar = (props) => {
           </div>
 
           <div style={{ display: "flex" }}>
-            <IconButton edge="end">
+            <IconButton /*edge="end"*/>
               <Image src={CartIcon} />
             </IconButton>
             <IconButton onClick={handleClick} id="lock-button">
@@ -107,14 +107,14 @@ const Navbar = (props) => {
                 alt="profile_pic"
                 src={props.image}
                 style={{
-                  marginLeft: 32,
+                  marginLeft: 27,
                   marginRight: 27,
                   width: 35,
                   height: 35,
                 }}
               />
             </IconButton>
-            <IconButton style={{ marginRight: 40 }} edge="end">
+            <IconButton style={{ marginRight: 20 }} /*edge="end"*/>
               <Image src={MenuIcon} />
             </IconButton>
           </div>

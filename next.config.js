@@ -11,9 +11,9 @@ const nextConfig = {
       },
       {
         protocol: "https",
-        hostname: "geometry-results.s3.us-east-1.amazonaws.com", // Match the S3 bucket hostname
+        hostname: "gni-results.s3.us-east-1.amazonaws.com", // Match the S3 bucket hostname
         port: "",
-        pathname: "/results1/**", // Match the path prefix for your S3 files
+        pathname: "/chat_id/**", // Match the path prefix for your S3 files
       },
     ],
   },
