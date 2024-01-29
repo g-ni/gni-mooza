@@ -159,6 +159,7 @@ const Vanities = () => {
                       src={template.imageUrl}
                       alt={`Image ${index + 1}`}
                       fill
+                      sizes="100vw"
                     />
                   }
                   text={

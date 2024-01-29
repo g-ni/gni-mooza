@@ -119,6 +119,7 @@ const RecentProjects = () => {
                             src={presignedImgs[project.ProjectId]}
                             alt={`Image ${index + 1}`}
                             fill
+                            sizes="100vw"
                           />
                         ) : null
                       }
