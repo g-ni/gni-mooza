@@ -29,8 +29,7 @@ export async function GET(req) {
     if (data) {
       const parsedData = await data.Body.transformToString();
       const jsonData = JSON.parse(parsedData);
-      console.log(jsonData);
-      // console.log(parsedData);
+
       return NextResponse.json(jsonData, { status: 200 });
     }
   } catch (error) {

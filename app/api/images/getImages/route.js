@@ -25,12 +25,12 @@ export async function GET(req) {
 
   try {
     const contentList = await client.send(command);
-    // console.log(contentList);
+
     if (contentList) {
       const files = contentList.Contents.filter((object) =>
         object.Key.endsWith(".svg")
       );
-      console.log(files);
+
       return NextResponse.json(files, { status: 200 });
     }
   } catch (error) {

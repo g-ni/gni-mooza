@@ -3,7 +3,6 @@ import { getSignedUrl } from "@aws-sdk/s3-request-presigner";
 import { NextResponse } from "next/server";
 
 export async function GET(req) {
-  console.log("IN ROUTE PRESIGNED GET!");
   const { searchParams } = new URL(req.url);
   const bucket = searchParams.get("bucket");
   const key = searchParams.get("key");
@@ -39,12 +38,9 @@ export async function GET(req) {
     });
 
     if (presignedUrl) {
-      console.log("GOT PRESIGNED URL!!!!!!!");
-      console.log(presignedUrl);
       return NextResponse.json(presignedUrl, { status: 200 });
     }
   } catch (error) {
-    console.log("EROOR IN PRE SIGNED");
     console.log(error);
     return NextResponse.json(
       { message: "couldnt get a presignedUrl", error },
