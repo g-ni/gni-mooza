@@ -5,6 +5,7 @@ import { Montserrat } from "next/font/google";
 import { styled } from "@mui/material/styles";
 import styles from "@/app/_styles/advertising.module.css";
 import Link from "next/link";
+import { AdvTypography, StartButton } from "./CustomUI";
 
 const montserrat = Montserrat({
   style: "normal",
@@ -12,30 +13,30 @@ const montserrat = Montserrat({
   weight: ["400"],
 });
 
-const AdvTypography = styled(Typography)(({ theme }) => ({
-  color: "#FE671F",
-  fontFeatureSettings: "'clig' off, 'liga' off",
-  fontSize: "51.225px",
-  fontWeight: 400,
-  fontStyle: "normal",
-  lineHeight: "62.608px",
-  fontFamily: montserrat.style.fontFamily,
-}));
-const StartButton = styled(Button)(({ theme }) => ({
-  "&.MuiButton-contained": {
-    background: "#FE671F",
-    borderRadius: "13.28px",
-    // width: "258.022px",
-    height: "79.683px",
-    flexShrink: 0,
-    textTransform: "none",
-    fontFamily: montserrat.style.fontFamily,
-    fontSize: 26,
-    fontWeight: 700,
-    textAlign: "center",
-    // lineHeight: 30,
-  },
-}));
+// const AdvTypography = styled(Typography)(({ theme }) => ({
+//   color: "#FE671F",
+//   fontFeatureSettings: "'clig' off, 'liga' off",
+//   fontSize: "51.225px",
+//   fontWeight: 400,
+//   fontStyle: "normal",
+//   lineHeight: "62.608px",
+//   fontFamily: montserrat.style.fontFamily,
+// }));
+// const StartButton = styled(Button)(({ theme }) => ({
+//   "&.MuiButton-contained": {
+//     background: "#FE671F",
+//     borderRadius: "13.28px",
+//     // width: "258.022px",
+//     height: "79.683px",
+//     flexShrink: 0,
+//     textTransform: "none",
+//     fontFamily: montserrat.style.fontFamily,
+//     fontSize: 26,
+//     fontWeight: 700,
+//     textAlign: "center",
+//     // lineHeight: 30,
+//   },
+// }));
 
 const Advertising = () => {
   return (
