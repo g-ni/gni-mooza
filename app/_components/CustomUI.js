@@ -80,3 +80,13 @@ export const CustomTab = styled(Tab)(({ theme }) => ({
   fontFamily: montserrat.style.fontFamily,
   fontSize: "28.44px",
 }));
+
+export const LogoTypography = styled(Typography)(({ theme }) => ({
+  color: "#93A5AE",
+  textAlign: "center",
+  fontFeatureSettings: "'clig' off, 'liga' off",
+  fontSize: 20,
+  fontWeight: 400,
+  fontStyle: "normal",
+  fontFamily: "Century Gothic",
+}));
