@@ -3,12 +3,34 @@ import { createTheme } from "@mui/material/styles";
 export const moozaTheme = createTheme({
   palette: {
     primary: {
-      main: "#FE671F",
-      light: "#F0916B",
+      main: "#FE671F", // Start button, main heading
     },
     secondary: {
-      main: "#58646A",
-      light: "#93A5AE",
+      main: "#F0916B", // Tabs color
+    },
+    text: {
+      primary: "#58646A", // Subtitles
+      secondary: "#93A5AE", // Paragraphs
+    },
+    background: {
+      default: "#F3E7E3", // Main background
+    },
+    action: {
+      disabled: "#ECCDC3", // Inactive tab color
+      disabledBackground: "rgba(243, 223, 217, 0.10)", // Inactive tab bg
+    },
+    // Added colors based on your confirmation
+    templateName: {
+      main: "rgb(240, 145, 107)", // Template name
+    },
+    templateBoxBg: {
+      main: "rgb(241, 230, 226)", // Template box background
+    },
+    projectsBoxBg: {
+      main: "rgb(207, 215, 219)", // Projects box background
+    },
+    templateDescription: {
+      main: "rgb(128, 142, 150)", // Template description
     },
   },
 });

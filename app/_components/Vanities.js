@@ -14,23 +14,15 @@ import { useRouter } from "next/navigation";
 import { getImagesByDetails } from "@/app/_utils/store/images";
 import { Montserrat } from "next/font/google";
 import Image from "next/image";
-import { styled } from "@mui/material/styles";
 import { TailSpin } from "react-loader-spinner";
 import TemplateBox from "./TemplateBox";
+import { SmallHeading } from "./CustomUI";
 
 const montserrat = Montserrat({
   style: "normal",
   subsets: ["latin"],
   weight: ["400", "700", "500"],
 });
-
-const SmallHeading = styled(Typography)(({ theme }) => ({
-  color: "#93A5AE",
-  fontFeatureSettings: "'clig' off, 'liga' off",
-  fontFamily: montserrat.style.fontFamily,
-  fontSize: 30,
-  fontWeight: 500,
-}));
 
 const Vanities = () => {
   const dispatch = useDispatch();

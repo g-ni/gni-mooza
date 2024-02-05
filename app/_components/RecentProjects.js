@@ -13,27 +13,9 @@ import { useSession } from "next-auth/react";
 import TemplateBox from "./TemplateBox";
 import Image from "next/image";
 import Link from "next/link";
-import { Box, Typography } from "@mui/material";
-import { styled } from "@mui/material/styles";
-import { Montserrat } from "next/font/google";
+import { Box } from "@mui/material";
 import { Heading } from "./CustomUI";
 import styles from "@/app/_styles/slider.module.css";
-
-const montserrat = Montserrat({
-  style: "normal",
-  subsets: ["latin"],
-  weight: ["400", "700", "500"],
-});
-
-// const Heading = styled(Typography)(({ theme }) => ({
-//   color: "#58646A",
-//   textAlign: "center",
-//   fontFeatureSettings: "'clig' off, 'liga' off",
-//   fontFamily: montserrat.style.fontFamily,
-//   fontSize: "34.128px",
-//   fontWeight: 700,
-//   lineHeight: "43.608px",
-// }));
 
 const RecentProjects = () => {
   const projects = useSelector((state) => state.projects.projects);

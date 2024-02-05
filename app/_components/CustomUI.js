@@ -90,3 +90,11 @@ export const LogoTypography = styled(Typography)(({ theme }) => ({
   fontStyle: "normal",
   fontFamily: "Century Gothic",
 }));
+
+export const SmallHeading = styled(Typography)(({ theme }) => ({
+  color: "#93A5AE",
+  fontFeatureSettings: "'clig' off, 'liga' off",
+  fontFamily: montserrat.style.fontFamily,
+  fontSize: 30,
+  fontWeight: 500,
+}));
