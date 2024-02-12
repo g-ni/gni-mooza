@@ -60,8 +60,10 @@ export const TamplatesTabList = styled(TabList)(({ theme }) => ({
 
 export const FurnitureMenuTabList = styled(TabList)(({ theme }) => ({
   "&.MuiTabList-indicator": {
-    background: "var(--Highliht-functions-in-up, #F0B49C)",
+    background: "#F0B49C",
     borderRadius: "14px",
+    width: "207px",
+    height: "35px",
   },
 }));
 
@@ -90,12 +92,27 @@ export const CustomTab = styled(Tab)(({ theme }) => ({
 
 export const FurnitureMenuTab = styled(Tab)(({ theme }) => ({
   "&.Mui-selected": {
-    background: "var(--Highliht-functions-in-up, #F0B49C)",
+    background: "#F0B49C",
     borderRadius: "14px",
+    width: "207px",
+    height: "35px",
+    minHeight: 0,
+    color: "#1A2A39",
   },
 
   background: "#FFF",
   borderRadius: "14px",
+  width: "207px",
+  height: "35px",
+  minHeight: 0,
+  color: "#1A2A39",
+  textAlign: "center",
+  fontFeatureSettings: "'clig' off, 'liga' off",
+  fontFamily: montserrat.style.fontFamily,
+  fontSize: "16px",
+  fontStyle: "normal",
+  fontWeight: 400,
+  lineHeight: "16px " /* 100% */,
 }));
 
 export const LogoTypography = styled(Typography)(({ theme }) => ({

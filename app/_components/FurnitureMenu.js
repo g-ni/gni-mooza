@@ -18,20 +18,43 @@ const FurnitureMenu = () => {
     <Box
       display="flex"
       flexDirection="column"
-      width="100%"
+      width="1302px"
       height="40px"
       bgcolor="#FFF"
+      marginTop="79px"
+      marginBottom="7px"
+      borderRadius="14px"
     >
       <TabContext value={value}>
         <FurnitureMenuTabList
           onChange={handleChange}
           TabIndicatorProps={{ style: { display: "none" } }}
         >
-          <FurnitureMenuTab value="1" icon={<Image src={SizeIcon} />} />
+          <FurnitureMenuTab
+            value="1"
+            icon={<Image src={SizeIcon} />}
+            iconPosition="start"
+            label="size"
+          />
 
-          <FurnitureMenuTab icon={<Image src={ComponentsIcon} />} value="2" />
-          <FurnitureMenuTab icon={<Image src={StyleIcon} />} value="3" />
-          <FurnitureMenuTab icon={<Image src={AddOnsIcon} />} value="4" />
+          <FurnitureMenuTab
+            icon={<Image src={ComponentsIcon} />}
+            iconPosition="start"
+            value="2"
+            label="components"
+          />
+          <FurnitureMenuTab
+            icon={<Image src={StyleIcon} />}
+            iconPosition="start"
+            value="3"
+            label="style"
+          />
+          <FurnitureMenuTab
+            icon={<Image src={AddOnsIcon} />}
+            iconPosition="start"
+            value="4"
+            label="add-ons"
+          />
         </FurnitureMenuTabList>
 
         {/* <TabPanel value="1">{value === "1" && <Vanities />}</TabPanel>

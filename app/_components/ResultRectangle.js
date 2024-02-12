@@ -71,11 +71,11 @@ const ResultRectangle = (props) => {
 
   return (
     <div className={styles.mainDiv}>
-      <div className={styles.iconsContainer}>
+      {/* <div className={styles.iconsContainer}>
         {iconsArr.map((icon, index) => {
           return <img key={index} className={styles.icon} src={icon.src} />;
         })}
-      </div>
+      </div> */}
       <div className={styles.resultContainer}>
         {!currentImage ? (
           <p className={`${styles.result} ${roboto.className}`}>
