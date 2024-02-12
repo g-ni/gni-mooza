@@ -4,7 +4,7 @@
 
   margin-top: 5px;
   margin-right: 5px;
-  background-color: white;
+  background-color: var(--Grays-F5F5F5, #f5f5f5);
 }
 
 .column {

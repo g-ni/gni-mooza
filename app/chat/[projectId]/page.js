@@ -4,12 +4,14 @@ import ResultRectangle from "@/app/_components/ResultRectangle";
 import ChatContainer from "@/app/_components/ChatContainer";
 import { styled } from "@mui/material/styles";
 import ChatNavbar from "@/app/_components/ChatNavbar";
+import Navbar from "@/app/_components/Navbar";
 import { useState, useEffect } from "react";
 import { postRegister } from "@/app/_utils/requests/auth";
 import { getUserByEmail } from "@/app/_utils/requests/users";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import styles from "../chat.module.css";
+import FurnitureMenu from "@/app/_components/FurnitureMenu";
 
 const drawerWidth = 252;
 
@@ -65,9 +67,14 @@ const ProjectIdPage = () => {
 
   return (
     <div
-      style={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        minHeight: "100vh",
+      }}
     >
-      <ChatNavbar image={data ? data.user.image : null} router={router} />
+      <Navbar image={data ? data.user.image : null} router={router} />
+
       <div
         style={{
           // marginTop: 80,
@@ -78,6 +85,7 @@ const ProjectIdPage = () => {
         }}
       >
         <div className={styles.row}>
+          <FurnitureMenu />
           <div className={styles.leftColumn}>
             <ChatContainer
               chats={chats}
