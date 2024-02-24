@@ -1,9 +1,15 @@
 import { styled } from "@mui/material/styles";
-import { Montserrat } from "next/font/google";
-import { Typography, Button, Tab } from "@mui/material";
+import { Montserrat, Inter } from "next/font/google";
+import { Typography, Button, Tab, TextField } from "@mui/material";
 import { TabList } from "@mui/lab";
 
 const montserrat = Montserrat({
+  style: "normal",
+  subsets: ["latin"],
+  weight: ["400", "700", "500"],
+});
+
+const inter = Inter({
   style: "normal",
   subsets: ["latin"],
   weight: ["400", "700", "500"],
@@ -131,4 +137,95 @@ export const SmallHeading = styled(Typography)(({ theme }) => ({
   fontFamily: montserrat.style.fontFamily,
   fontSize: 30,
   fontWeight: 500,
+}));
+
+export const CustomizeHeading = styled(Typography)(({ theme }) => ({
+  color: "#1A2A39",
+  textAlign: "center",
+  fontFeatureSettings: "'clig' off, 'liga' off",
+  fontSize: 18,
+  fontWeight: 500,
+  fontStyle: "normal",
+  fontFamily: montserrat.style.fontFamily,
+  wordWrap: "break-word",
+  marginTop: 21,
+  span: {
+    color: "#FF661F",
+    fontSize: 16,
+    fontWeight: 700,
+  },
+}));
+
+export const SizeDimensions = styled(Typography)(({ theme, isActive }) => ({
+  color: isActive ? "#1A2A39" : "var(--Grays-86888D, #86888D)",
+  textAlign: "center",
+  fontFeatureSettings: "'clig' off, 'liga' off",
+  fontSize: 16,
+  fontWeight: 500,
+  fontStyle: "normal",
+  fontFamily: montserrat.style.fontFamily,
+}));
+
+export const WidthButton = styled(Button)(({ theme }) => ({
+  "&.MuiButton-contained": {
+    borderRadius: "4px",
+    background: "var(--Grays-F5F5F5, #F5F5F5)",
+    minWidth: "24px",
+    width: "24px",
+    height: "24px",
+    flexShrink: 0,
+    color: "#1A2A39",
+    textAlign: "center",
+    fontFeatureSettings: "'case' on",
+    fontFamily: inter.style.fontFamily,
+    fontSize: "28px",
+    fontStyle: "normal",
+    fontWeight: 400,
+    padding: 0,
+  },
+}));
+
+export const WidthInput = styled(TextField)(({ theme }) => ({
+  width: "40%",
+  height: "24px",
+  flexDirection: "row",
+  input: {
+    color: "#1A2A39",
+    textAlign: "center",
+    fontFeatureSettings: "'clig' off, 'liga' off",
+    fontSize: 16,
+    fontWeight: 400,
+    fontStyle: "normal",
+    fontFamily: montserrat.style.fontFamily,
+  },
+}));
+
+export const MinMax = styled(Typography)(({ theme }) => ({
+  color: "#1A2A39",
+  textAlign: "center",
+  fontFeatureSettings: "'clig' off, 'liga' off",
+  fontSize: 12,
+  fontWeight: 400,
+  fontStyle: "normal",
+  fontFamily: montserrat.style.fontFamily,
+}));
+
+export const ComponentsTabButton = styled(Button)(({ theme, buttonOpen }) => ({
+  "&.MuiButton-contained": {
+    borderRadius: "5px",
+    background: buttonOpen ? "#F0B49C" : "#F1D7CD",
+    width: "121px",
+    height: buttonOpen ? "81px" : "29px",
+    flexShrink: 0,
+    color: "#1A2A39",
+    textAlign: "center",
+    fontFeatureSettings: "'clig' off, 'liga' off",
+    fontFamily: montserrat.style.fontFamily,
+    fontSize: "16px",
+    fontStyle: "normal",
+    fontWeight: 400,
+    padding: 0,
+    marginTop: "15px",
+    textTransform: "none",
+  },
 }));
