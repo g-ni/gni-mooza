@@ -1,7 +1,7 @@
 import styles from "../_styles/chatContainer.module.css";
 import { Skeleton, Avatar, Card, CardContent, IconButton } from "@mui/material";
 import { styled } from "@mui/material/styles";
-import { Roboto } from "next/font/google";
+import { Roboto, Montserrat } from "next/font/google";
 import { useState, useEffect, useRef } from "react";
 import { getAnswer } from "../_utils/requests/chats";
 import { getUserByEmail } from "../_utils/requests/users";
@@ -20,6 +20,12 @@ const roboto = Roboto({
   weight: ["400", "500"],
 });
 
+const montserrat = Montserrat({
+  style: "normal",
+  subsets: ["latin"],
+  weight: ["400", "700", "500"],
+});
+
 const BotCard = styled(Card)(({ theme, background }) => ({
   "&.MuiCard-root": {
     borderRadius: 14,
@@ -31,8 +37,8 @@ const BotCard = styled(Card)(({ theme, background }) => ({
         : "0px 5px 4px 0px rgba(0, 0, 0, 0.40)",
     height: "min-content",
     marginTop: 50,
-    fontSize: 24,
-    fontFamily: roboto.style,
+    fontSize: 14,
+    fontFamily: montserrat.style,
   },
 }));
 
@@ -240,92 +246,89 @@ in order to get the initial message from the bot*/
   };
   return (
     <div className={styles.mainDiv}>
-      <div className={styles.chatBackground}>
-        <div
-          style={{ display: "flex", flexDirection: "column", width: "100%" }}
-        >
-          <Scrollbar ref={scrollEndRef}>
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                margin: 10,
-                zIndex: 2,
-                position: "relative",
-              }}
-            >
-              {project && project.Chats && project.Chats.length !== 0
-                ? project.Chats.map((message, index) => {
-                    return (
-                      <div
-                        className={
-                          message.sender === "user"
-                            ? styles.messageContainerUser
-                            : styles.messageContainer
-                        }
-                        key={index}
-                      >
-                        {message.sender === "user" ? (
-                          <CustomAvatar
-                            style={{
-                              height: 40,
-                              width: 40,
-                              marginTop: 40,
-                              marginLeft: 20,
-                              marginRight: 20,
-                            }}
-                            src={
-                              props.session ? props.session.user.image : null
-                            }
-                          />
-                        ) : message.sender === "bot" ? (
-                          <img
-                            style={{
-                              height: 40,
-                              width: 40,
-                              marginTop: 40,
-                              marginLeft: 20,
-                              marginRight: 20,
-                            }}
-                            src={chatGniLogo.src}
-                          />
-                        ) : null}
+      <div style={{ display: "flex", flexDirection: "column", width: "100%" }}>
+        <Scrollbar ref={scrollEndRef}>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              margin: 10,
+              zIndex: 2,
+              position: "relative",
+            }}
+          >
+            {project && project.Chats && project.Chats.length !== 0
+              ? project.Chats.map((message, index) => {
+                  return (
+                    <div
+                      className={
+                        message.sender === "user"
+                          ? styles.messageContainerUser
+                          : styles.messageContainer
+                      }
+                      key={index}
+                    >
+                      {message.sender === "user" ? (
+                        <CustomAvatar
+                          style={{
+                            height: 40,
+                            width: 40,
+                            marginTop: 40,
+                            marginLeft: 20,
+                            marginRight: 20,
+                          }}
+                          src={props.session ? props.session.user.image : null}
+                        />
+                      ) : message.sender === "bot" ? (
+                        <img
+                          style={{
+                            height: 40,
+                            width: 40,
+                            marginTop: 40,
+                            marginLeft: 20,
+                            marginRight: 20,
+                          }}
+                          src={chatGniLogo.src}
+                        />
+                      ) : null}
 
-                        <BotCard
-                          background={
-                            message.sender === "bot" ? "white" : "gray"
-                          }
-                        >
-                          <CardContent>{message.text}</CardContent>
-                        </BotCard>
-                      </div>
-                    );
-                  })
-                : PageLoading}
-              {isLoading ? (
-                <div style={{ display: "flex" }}>
-                  <BotCard style={{ marginLeft: 90 }} background={"white"}>
-                    <CardContent>{Loading}</CardContent>
-                  </BotCard>
-                </div>
-              ) : null}
-            </div>
-          </Scrollbar>
-          <div className={styles.inputDiv}>
-            <input
-              className={`${styles.chatInput} ${roboto.className}`}
-              placeholder="Type your message"
-              value={input}
-              onChange={(e) => setInput(e.target.value)}
-              onKeyUp={onPressKeyHandler}
-            />
-            <IconButton
-              style={{ background: "#9A9A9D", marginLeft: 10 }}
-              onClick={sendMessage}
-            >
-              <img src={submitButton.src} />
-            </IconButton>
+                      <BotCard
+                        background={message.sender === "bot" ? "white" : "gray"}
+                      >
+                        <CardContent>{message.text}</CardContent>
+                      </BotCard>
+                    </div>
+                  );
+                })
+              : PageLoading}
+            {isLoading ? (
+              <div style={{ display: "flex" }}>
+                <BotCard style={{ marginLeft: 90 }} background={"white"}>
+                  <CardContent>{Loading}</CardContent>
+                </BotCard>
+              </div>
+            ) : null}
           </div>
+        </Scrollbar>
+        <div className={styles.inputDiv}>
+          <input
+            className={`${styles.chatInput} ${roboto.className}`}
+            placeholder="Type your message"
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            onKeyUp={onPressKeyHandler}
+          />
+          <IconButton
+            style={{
+              background: "#FF661F",
+              height: "25",
+              width: "25",
+              marginLeft: 10,
+            }}
+            onClick={sendMessage}
+          >
+            <img src={submitButton.src} />
+          </IconButton>
         </div>
       </div>
     </div>

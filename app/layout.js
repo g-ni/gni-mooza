@@ -5,7 +5,7 @@ import { SessionProvider } from "next-auth/react";
 import { Provider } from "react-redux";
 import { ThemeProvider } from "@mui/material/styles";
 import store from "./_utils/store";
-import theme from "./_utils/theme";
+import { theme } from "./_utils/theme";
 
 export default function RootLayout({ children }) {
   return (

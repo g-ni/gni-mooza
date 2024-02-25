@@ -1,14 +1,14 @@
 .mainDiv {
   flex-shrink: 0;
-  border: 1px solid #9a9a9d;
-  border-radius: 14px;
-  background: #9a9a9d;
+  /* border: 1px solid #9a9a9d; */
+  border-radius: 0px 0px 14px 14px;
+  background: #fff;
   display: flex;
   justify-content: center;
   flex-direction: column;
-  margin-top: 22.15px;
+  /* margin-top: 22.15px;
   margin-bottom: 50px;
-  margin-right: 22.15px;
+  margin-right: 22.15px; */
 }
 
 .resultContainer {
