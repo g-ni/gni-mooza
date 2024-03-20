@@ -70,7 +70,7 @@ const SizeTab = () => {
               value={widthValue}
               onChange={(event) => setWidthValue(event.target.value)}
               InputProps={{
-                endAdornment: <span>"</span>,
+                endAdornment: <span>&quot;</span>,
               }}
             />
             <WidthButton variant="contained" onClick={increaseWidth}>
